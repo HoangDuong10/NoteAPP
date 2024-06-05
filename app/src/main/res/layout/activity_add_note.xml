@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/layout_toolbar" />
+
+    <EditText
+        android:id="@+id/edtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_title"
+        android:padding="@dimen/define_dimen_18"
+        android:layout_marginTop="@dimen/define_dimen_14"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
+        android:textSize="@dimen/text_size_small"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/edtDescrption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/define_dimen_10"
+        android:padding="@dimen/define_dimen_18"
+        android:hint="@string/hint_descrption"
+        android:imeOptions="actionDone"
+        android:textSize="@dimen/text_size_small"
+        android:autofillHints="" />
+    <Button
+        android:id="@+id/btnAddNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/define_dimen_30"
+        android:background="@color/colorPrimary"
+        android:text="@string/add_note"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_small" />
+</LinearLayout>

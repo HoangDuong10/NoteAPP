@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="click_add_note">Nhấp vào + để thêm ghi chú</string>
+    <string name="app_name">NoteApp</string>
+    <string name="hint_title">Title</string>
+    <string name="hint_descrption">Descrption</string>
+    <string name="add_note">Add Note</string>
+    <string name="update_note">Update Note</string>
+    <string name="action_ok">Đồng ý</string>
+    <string name="action_cancel">Hủy bỏ</string>
+    <string name="msg_delete_note">Bạn muốn xoa Note này?</string>
+
+
+</resources>
