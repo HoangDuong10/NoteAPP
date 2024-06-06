@@ -1,8 +1,11 @@
 package com.example.noteapp.activity
+import android.app.Activity
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.noteapp.R
 import com.example.noteapp.database.NoteDatabase
@@ -24,12 +27,17 @@ class UpdateNoteActivity : AppCompatActivity() {
         initToolbar()
         getNote()
         activityUpdateNoteBinding.btnUpdateNote.setOnClickListener {
+
            updateNote()
         }
 
     }
 
     private fun updateNote(){
+        if(activityUpdateNoteBinding.edtTitle.text.isEmpty() || activityUpdateNoteBinding.edtDescrption.text.isEmpty()){
+            Toast.makeText(this,"Note empty", Toast.LENGTH_LONG).show()
+            return
+        }
         if (note != null) {
             note!!.title = activityUpdateNoteBinding.edtTitle.text.toString()
             note!!.description = activityUpdateNoteBinding.edtDescrption.text.toString()
@@ -38,6 +46,7 @@ class UpdateNoteActivity : AppCompatActivity() {
         val intent = Intent()
         setResult(RESULT_OK,intent)
         finish()
+
     }
     private fun getNote() {
         note = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -57,4 +66,8 @@ class UpdateNoteActivity : AppCompatActivity() {
         activityUpdateNoteBinding.toolBar.tvTitle.text = getString(R.string.update_note)
         activityUpdateNoteBinding.toolBar.imgBack.setOnClickListener { finish() }
     }
+
+
+
+
 }
